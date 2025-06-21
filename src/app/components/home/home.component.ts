@@ -87,11 +87,12 @@ import { CommonModule } from '@angular/common';
       background-size: cover;
       background-position: center;
       color: white;
-      padding: 4rem 2rem;
-      margin: -2rem -2rem 2rem -2rem;
+      padding: 4rem 4rem;
+      margin: 0 0 2rem 0;
       text-align: center;
       position: relative;
       overflow: hidden;
+      border-radius: 20px;
     }
 
     
