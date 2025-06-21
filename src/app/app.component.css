@@ -39,8 +39,9 @@
   margin: 0 auto;
   padding: 0 2rem;
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
   align-items: center;
+  gap: 1rem;
   position: relative;
   z-index: 2;
 }
@@ -236,10 +237,9 @@
 /* Mobile responsiveness */
 @media (max-width: 768px) {
   .header-content {
-    flex-direction: row;
+    flex-direction: column;
     gap: 0.5rem;
     padding: 0 1rem;
-    flex-wrap: nowrap;
   }
   
   .logo h1 {
