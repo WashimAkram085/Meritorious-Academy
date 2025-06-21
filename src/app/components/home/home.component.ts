@@ -94,21 +94,7 @@ import { CommonModule } from '@angular/common';
       overflow: hidden;
     }
 
-    .hero::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="stars" x="0" y="0" width="20" height="20" patternUnits="userSpaceOnUse"><circle cx="10" cy="10" r="1" fill="white" opacity="0.3"/></pattern></defs><rect width="100" height="100" fill="url(%23stars)"/></svg>');
-      animation: twinkle 4s linear infinite;
-    }
-
-    @keyframes twinkle {
-      0%, 100% { opacity: 0.3; }
-      50% { opacity: 0.8; }
-    }
+    
 
     .hero-content {
       position: relative;
@@ -162,7 +148,6 @@ import { CommonModule } from '@angular/common';
       padding: 2rem 1.5rem;
       border-radius: 20px;
       backdrop-filter: blur(15px);
-      border: 1px solid rgba(255,255,255,0.2);
       transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
       position: relative;
       overflow: hidden;
