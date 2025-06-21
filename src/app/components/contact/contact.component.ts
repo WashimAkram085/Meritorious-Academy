@@ -38,8 +38,8 @@ import { FormsModule } from '@angular/forms';
             <div class="info-item">
               <span class="icon">✉️</span>
               <div>
-                <p><strong>Email:</strong> info@meritorious.edu</p>
-                <p><strong>Principal:</strong> principal@meritorious.edu</p>
+                <p><strong>Email:</strong> info&#64;meritorious.edu</p>
+                <p><strong>Principal:</strong> principal&#64;meritorious.edu</p>
               </div>
             </div>
           </div>
@@ -62,22 +62,22 @@ import { FormsModule } from '@angular/forms';
               <div class="dept-item">
                 <h4>Admissions Office</h4>
                 <p>📞 +91 98765 43201</p>
-                <p>✉️ admissions@meritorious.edu</p>
+                <p>✉️ admissions&#64;meritorious.edu</p>
               </div>
               <div class="dept-item">
                 <h4>Accounts Office</h4>
                 <p>📞 +91 98765 43202</p>
-                <p>✉️ accounts@meritorious.edu</p>
+                <p>✉️ accounts&#64;meritorious.edu</p>
               </div>
               <div class="dept-item">
                 <h4>Academic Office</h4>
                 <p>📞 +91 98765 43203</p>
-                <p>✉️ academic@meritorious.edu</p>
+                <p>✉️ academic&#64;meritorious.edu</p>
               </div>
               <div class="dept-item">
                 <h4>Transportation</h4>
                 <p>📞 +91 98765 43204</p>
-                <p>✉️ transport@meritorious.edu</p>
+                <p>✉️ transport&#64;meritorious.edu</p>
               </div>
             </div>
           </div>
