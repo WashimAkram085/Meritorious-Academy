@@ -4,13 +4,34 @@
   display: flex;
   flex-direction: column;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
 }
 
 .header {
-  background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
   color: white;
   padding: 1rem 0;
-  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+  position: relative;
+  overflow: hidden;
+}
+
+.header::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(45deg, transparent, rgba(255,255,255,0.1), transparent);
+  transform: rotate(45deg);
+  animation: shine 3s infinite;
+}
+
+@keyframes shine {
+  0% { transform: translateX(-100%) translateY(-100%) rotate(45deg); }
+  50% { transform: translateX(50%) translateY(50%) rotate(45deg); }
+  100% { transform: translateX(200%) translateY(200%) rotate(45deg); }
 }
 
 .header-content {
@@ -21,62 +42,101 @@
   justify-content: space-between;
   align-items: center;
   position: relative;
+  z-index: 2;
+}
+
+.logo {
+  animation: fadeInLeft 0.8s ease-out;
 }
 
 .logo h1 {
   margin: 0;
-  font-size: 2rem;
+  font-size: 1.8rem;
   font-weight: 700;
+  background: linear-gradient(45deg, #fff, #f0f8ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: glow 2s ease-in-out infinite alternate;
+}
+
+@keyframes glow {
+  from { text-shadow: 0 0 10px rgba(255,255,255,0.5); }
+  to { text-shadow: 0 0 20px rgba(255,255,255,0.8), 0 0 30px rgba(255,255,255,0.5); }
 }
 
 .logo p {
   margin: 0;
-  font-size: 0.9rem;
+  font-size: 0.8rem;
   opacity: 0.9;
+  animation: fadeIn 1s ease-out 0.3s both;
 }
 
 .nav {
   display: flex;
-  gap: 2rem;
+  gap: 1.2rem;
   align-items: center;
   position: relative;
+  animation: fadeInRight 0.8s ease-out;
 }
 
 .nav a {
   color: white;
   text-decoration: none;
   font-weight: 500;
-  padding: 0.5rem 1rem;
-  border-radius: 5px;
-  transition: all 0.3s ease;
+  padding: 0.6rem 1rem;
+  border-radius: 25px;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  position: relative;
+  overflow: hidden;
+  font-size: 0.9rem;
+}
+
+.nav a::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+  transition: left 0.5s;
+}
+
+.nav a:hover::before {
+  left: 100%;
 }
 
 .nav a:hover, .nav a.active {
-  background-color: rgba(255,255,255,0.2);
+  background: rgba(255,255,255,0.2);
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
 }
 
 .admin-btn {
   background: linear-gradient(135deg, #ff6b35 0%, #f7931e 100%) !important;
   color: white !important;
-  padding: 0.7rem 1.5rem !important;
-  border-radius: 25px !important;
+  padding: 0.4rem 0.8rem !important;
+  border-radius: 20px !important;
   font-weight: 600 !important;
-  font-size: 0.9rem !important;
+  font-size: 0.7rem !important;
   text-transform: uppercase !important;
-  letter-spacing: 0.5px !important;
-  box-shadow: 0 4px 15px rgba(255, 107, 53, 0.3) !important;
-  border: 2px solid rgba(255, 255, 255, 0.3) !important;
-  position: absolute !important;
-  right: -1rem !important;
-  top: 50% !important;
-  transform: translateY(-50%) !important;
+  letter-spacing: 0.3px !important;
+  box-shadow: 0 3px 10px rgba(255, 107, 53, 0.3) !important;
+  border: 1px solid rgba(255, 255, 255, 0.3) !important;
   white-space: nowrap !important;
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.05); }
 }
 
 .admin-btn:hover {
   background: linear-gradient(135deg, #e55a2b 0%, #e8831a 100%) !important;
-  transform: translateY(-50%) scale(1.05) !important;
-  box-shadow: 0 6px 20px rgba(255, 107, 53, 0.4) !important;
+  transform: translateY(-3px) scale(1.05) !important;
+  box-shadow: 0 6px 20px rgba(255, 107, 53, 0.5) !important;
   border-color: rgba(255, 255, 255, 0.5) !important;
 }
 
@@ -87,43 +147,162 @@
   padding: 2rem;
   width: 100%;
   box-sizing: border-box;
+  animation: fadeInUp 1s ease-out;
+  background: white;
+  border-radius: 20px 20px 0 0;
+  box-shadow: 0 -5px 30px rgba(0,0,0,0.1);
+  margin-top: 2rem;
+  position: relative;
+}
+
+.main-content::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, #667eea, #764ba2, #ff6b35, #f7931e);
+  border-radius: 20px 20px 0 0;
 }
 
 .footer {
-  background-color: #333;
+  background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
   color: white;
   text-align: center;
-  padding: 1rem;
+  padding: 2rem;
   margin-top: auto;
+  animation: fadeIn 1s ease-out 0.5s both;
+  position: relative;
+  overflow: hidden;
 }
 
+.footer::before {
+  content: '';
+  position: absolute;
+  top: -2px;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, #667eea, #764ba2);
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes fadeInLeft {
+  from { opacity: 0; transform: translateX(-30px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes fadeInRight {
+  from { opacity: 0; transform: translateX(30px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes bounceIn {
+  0% { transform: scale(0.3); opacity: 0; }
+  50% { transform: scale(1.05); }
+  70% { transform: scale(0.9); }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+/* Hover effects for interactive elements */
+.nav a, .admin-btn {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Floating animation for admin button */
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-5px); }
+}
+
+.admin-btn {
+  animation: float 3s ease-in-out infinite !important;
+}
+
+.admin-btn:hover {
+  animation: none !important;
+}
+
+/* Mobile responsiveness */
 @media (max-width: 768px) {
   .header-content {
-    flex-direction: column;
-    gap: 1rem;
-    padding-right: 4rem;
+    flex-direction: row;
+    gap: 0.5rem;
+    padding: 0 1rem;
+    flex-wrap: nowrap;
+  }
+  
+  .logo h1 {
+    font-size: 1.4rem;
+  }
+  
+  .logo p {
+    font-size: 0.7rem;
   }
   
   .nav {
-    flex-wrap: wrap;
-    gap: 1rem;
-    position: static;
+    gap: 0.6rem;
+    overflow-x: auto;
+    flex-wrap: nowrap;
+    padding-bottom: 2px;
+  }
+  
+  .nav a {
+    padding: 0.4rem 0.6rem;
+    font-size: 0.75rem;
+    white-space: nowrap;
+    border-radius: 15px;
   }
   
   .admin-btn {
-    position: absolute !important;
-    right: 1rem !important;
-    top: 1rem !important;
-    transform: none !important;
-    padding: 0.6rem 1.2rem !important;
-    font-size: 0.8rem !important;
-  }
-  
-  .admin-btn:hover {
-    transform: scale(1.05) !important;
+    padding: 0.3rem 0.6rem !important;
+    font-size: 0.6rem !important;
+    border-radius: 15px !important;
   }
   
   .main-content {
     padding: 1rem;
+    margin-top: 1rem;
   }
+}
+
+@media (max-width: 480px) {
+  .nav {
+    gap: 0.4rem;
+  }
+  
+  .nav a {
+    padding: 0.3rem 0.5rem;
+    font-size: 0.7rem;
+  }
+  
+  .admin-btn {
+    padding: 0.25rem 0.5rem !important;
+    font-size: 0.55rem !important;
+  }
+}
+
+/* Smooth scrolling for the entire page */
+* {
+  scroll-behavior: smooth;
+}
+
+/* Add subtle animations to router outlet content */
+router-outlet ~ * {
+  animation: slideIn 0.6s ease-out;
+}
+
+@keyframes slideIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
 }
