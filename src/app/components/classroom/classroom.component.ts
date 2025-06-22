@@ -1,4 +1,3 @@
-
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
@@ -23,16 +22,16 @@ import { CommonModule } from '@angular/common';
           <div class="fee-structure">
             <h4>Fee Structure</h4>
             <div class="fee-item">
-              <span>Tuition Fee:</span>
-              <span>₹{{ classInfo.fees.tuition }}/month</span>
-            </div>
-            <div class="fee-item">
-              <span>Transportation:</span>
-              <span>₹{{ classInfo.fees.transport }}/month</span>
+              <span>Admission Fee:</span>
+              <span>₹{{ classInfo.fees.admission }} (One Time Payment)</span>
             </div>
             <div class="fee-item">
               <span>Activity Fee:</span>
-              <span>₹{{ classInfo.fees.activity }}/month</span>
+              <span>₹{{ classInfo.fees.activity }} (One Time Payment)</span>
+            </div>
+            <div class="fee-item">
+              <span>Tuition Fee:</span>
+              <span>₹{{ classInfo.fees.tuition }}/month</span>
             </div>
             <div class="fee-total">
               <span>Total Monthly:</span>
@@ -41,9 +40,6 @@ import { CommonModule } from '@angular/common';
             
             <div class="fee-image-placeholder" *ngIf="classInfo.feeImageUrl">
               <img [src]="classInfo.feeImageUrl" alt="Fee Structure for Class {{ classInfo.number }}" />
-            </div>
-            <div class="fee-image-placeholder" *ngIf="!classInfo.feeImageUrl">
-              <p>Fee structure image will be uploaded by admin</p>
             </div>
           </div>
         </div>
@@ -166,7 +162,7 @@ export class ClassroomComponent {
       subjects: 'English, Math, Science, Social Studies, Hindi',
       studentCount: 35,
       teacher: 'Mrs. Sharma',
-      fees: { tuition: 2000, transport: 800, activity: 300, total: 3100 },
+      fees: { tuition: 2000, admission: 0, activity: 0, total: 2000 },
       feeImageUrl: ''
     },
     {
@@ -174,7 +170,7 @@ export class ClassroomComponent {
       subjects: 'English, Math, Science, Social Studies, Hindi',
       studentCount: 38,
       teacher: 'Mrs. Gupta',
-      fees: { tuition: 2200, transport: 800, activity: 300, total: 3300 },
+      fees: { tuition: 2200, admission: 800, activity: 300, total: 3300 },
       feeImageUrl: ''
     },
     {
@@ -182,7 +178,7 @@ export class ClassroomComponent {
       subjects: 'English, Math, Science, Social Studies, Hindi',
       studentCount: 42,
       teacher: 'Mr. Singh',
-      fees: { tuition: 2400, transport: 800, activity: 300, total: 3500 },
+      fees: { tuition: 2400, admission: 800, activity: 300, total: 3500 },
       feeImageUrl: ''
     },
     {
@@ -190,7 +186,7 @@ export class ClassroomComponent {
       subjects: 'English, Math, Science, Social Studies, Hindi',
       studentCount: 40,
       teacher: 'Mrs. Patel',
-      fees: { tuition: 2600, transport: 800, activity: 400, total: 3800 },
+      fees: { tuition: 2600, admission: 800, activity: 400, total: 3800 },
       feeImageUrl: ''
     },
     {
@@ -198,7 +194,7 @@ export class ClassroomComponent {
       subjects: 'English, Math, Science, Social Studies, Hindi',
       studentCount: 45,
       teacher: 'Mr. Kumar',
-      fees: { tuition: 2800, transport: 800, activity: 400, total: 4000 },
+      fees: { tuition: 2800, admission: 800, activity: 400, total: 4000 },
       feeImageUrl: ''
     },
     {
@@ -206,7 +202,7 @@ export class ClassroomComponent {
       subjects: 'English, Math, Science, Social Studies, Hindi, Computer',
       studentCount: 43,
       teacher: 'Mrs. Verma',
-      fees: { tuition: 3000, transport: 800, activity: 400, total: 4200 },
+      fees: { tuition: 3000, admission: 800, activity: 400, total: 4200 },
       feeImageUrl: ''
     },
     {
@@ -214,7 +210,7 @@ export class ClassroomComponent {
       subjects: 'English, Math, Science, Social Studies, Hindi, Computer',
       studentCount: 41,
       teacher: 'Mr. Joshi',
-      fees: { tuition: 3200, transport: 800, activity: 500, total: 4500 },
+      fees: { tuition: 3200, admission: 800, activity: 500, total: 4500 },
       feeImageUrl: ''
     },
     {
@@ -222,7 +218,7 @@ export class ClassroomComponent {
       subjects: 'English, Math, Science, Social Studies, Hindi, Computer',
       studentCount: 39,
       teacher: 'Mrs. Mehta',
-      fees: { tuition: 3400, transport: 800, activity: 500, total: 4700 },
+      fees: { tuition: 3400, admission: 800, activity: 500, total: 4700 },
       feeImageUrl: ''
     },
     {
@@ -230,7 +226,7 @@ export class ClassroomComponent {
       subjects: 'English, Math, Science, Social Studies, Hindi, Computer',
       studentCount: 37,
       teacher: 'Mr. Agarwal',
-      fees: { tuition: 3600, transport: 800, activity: 500, total: 4900 },
+      fees: { tuition: 3600, admission: 800, activity: 500, total: 4900 },
       feeImageUrl: ''
     },
     {
@@ -238,7 +234,7 @@ export class ClassroomComponent {
       subjects: 'English, Math, Physics, Chemistry, Biology, Computer',
       studentCount: 35,
       teacher: 'Mrs. Saxena',
-      fees: { tuition: 4000, transport: 800, activity: 600, total: 5400 },
+      fees: { tuition: 4000, admission: 800, activity: 600, total: 5400 },
       feeImageUrl: ''
     },
     {
@@ -246,7 +242,7 @@ export class ClassroomComponent {
       subjects: 'Stream-based: Science/Commerce/Arts',
       studentCount: 32,
       teacher: 'Mr. Mishra',
-      fees: { tuition: 4500, transport: 800, activity: 600, total: 5900 },
+      fees: { tuition: 4500, admission: 800, activity: 600, total: 5900 },
       feeImageUrl: ''
     },
     {
@@ -254,7 +250,7 @@ export class ClassroomComponent {
       subjects: 'Stream-based: Science/Commerce/Arts',
       studentCount: 30,
       teacher: 'Mrs. Tiwari',
-      fees: { tuition: 5000, transport: 800, activity: 600, total: 6400 },
+      fees: { tuition: 5000, admission: 800, activity: 600, total: 6400 },
       feeImageUrl: ''
     }
   ];

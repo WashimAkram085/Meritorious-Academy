@@ -14,11 +14,11 @@ import { CommonModule } from '@angular/common';
           <p>Nurturing Excellence, Building Future Leaders</p>
           <div class="hero-stats">
             <div class="stat">
-              <h3>500+</h3>
+              <h3>200+</h3>
               <p>Students</p>
             </div>
             <div class="stat">
-              <h3>50+</h3>
+              <h3>30+</h3>
               <p>Teachers</p>
             </div>
             <div class="stat">
@@ -26,7 +26,7 @@ import { CommonModule } from '@angular/common';
               <p>Classes</p>
             </div>
             <div class="stat">
-              <h3>15+</h3>
+              <h3>5+</h3>
               <p>Years</p>
             </div>
           </div>
@@ -52,13 +52,13 @@ import { CommonModule } from '@angular/common';
       </section>
 
       <section class="principal-message">
-        <h2>Message from Principal's Desk</h2>
+        <h2>From Principal's Desk</h2>
         <div class="principal-content">
           <div class="principal-photo">
             <img src="https://via.placeholder.com/200x200/1e3c72/ffffff?text=Principal" alt="Principal Photo">
           </div>
           <div class="principal-text">
-            <h3>Dr. Sunita Sharma</h3>
+            <h3>Raihanul Islam</h3>
             <p class="designation">Principal, Meritorious Academy</p>
             <blockquote>
               "Welcome to Meritorious Academy, where we believe in nurturing not just academic excellence but also character and values. Our dedicated faculty and state-of-the-art facilities create an environment where every student can discover their potential and achieve their dreams. We are committed to providing holistic education that prepares our students for the challenges of tomorrow while instilling in them the values of integrity, compassion, and leadership."
@@ -108,15 +108,6 @@ import { CommonModule } from '@angular/common';
       <section class="school-location">
         <h2>Find Us</h2>
         <div class="location-content">
-          <div class="location-info">
-            <h3>School Location</h3>
-            <p><strong>Address:</strong> 123 Education Street, Academic City, State - 123456</p>
-            <p><strong>Phone:</strong> +91 98765 43200</p>
-            <p><strong>Email:</strong> info@meritorious.edu</p>
-            <div class="directions-btn">
-              <button class="btn-primary">Get Directions</button>
-            </div>
-          </div>
           <div class="map-container">
             <div class="map-placeholder">
               <iframe 
@@ -622,7 +613,6 @@ import { CommonModule } from '@angular/common';
 
     .location-content {
       display: grid;
-      grid-template-columns: 1fr 2fr;
       gap: 3rem;
       align-items: start;
     }
