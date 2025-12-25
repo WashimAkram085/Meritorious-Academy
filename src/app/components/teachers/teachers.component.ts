@@ -18,7 +18,7 @@ export class TeachersComponent {
       experience: 8,
       email: 'priya.sharma@meritorious.edu',
       phone: '+91 98765 43210',
-      imageUrl: 'https://via.placeholder.com/100x100/2a5298/ffffff?text=PS'
+      imageUrl: 'https://images.unsplash.com/photo-1580489944761-15a19d654956?w=400&h=400&fit=crop&crop=faces'
     },
     {
       name: 'Mr. Rajesh Kumar',
@@ -27,7 +27,7 @@ export class TeachersComponent {
       experience: 12,
       email: 'rajesh.kumar@meritorious.edu',
       phone: '+91 98765 43211',
-      imageUrl: 'https://via.placeholder.com/100x100/2a5298/ffffff?text=RK'
+      imageUrl: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop&crop=faces'
     },
     {
       name: 'Mrs. Sunita Gupta',
@@ -36,7 +36,7 @@ export class TeachersComponent {
       experience: 10,
       email: 'sunita.gupta@meritorious.edu',
       phone: '+91 98765 43212',
-      imageUrl: 'https://via.placeholder.com/100x100/2a5298/ffffff?text=SG'
+      imageUrl: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=400&h=400&fit=crop&crop=faces'
     },
     {
       name: 'Dr. Anil Singh',
@@ -45,7 +45,7 @@ export class TeachersComponent {
       experience: 15,
       email: 'anil.singh@meritorious.edu',
       phone: '+91 98765 43213',
-      imageUrl: 'https://via.placeholder.com/100x100/2a5298/ffffff?text=AS'
+      imageUrl: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=400&h=400&fit=crop&crop=faces'
     },
     {
       name: 'Mrs. Kavita Patel',
@@ -54,7 +54,7 @@ export class TeachersComponent {
       experience: 7,
       email: 'kavita.patel@meritorious.edu',
       phone: '+91 98765 43214',
-      imageUrl: 'https://via.placeholder.com/100x100/2a5298/ffffff?text=KP'
+      imageUrl: 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=400&h=400&fit=crop&crop=faces'
     },
     {
       name: 'Mr. Deepak Verma',
@@ -63,7 +63,7 @@ export class TeachersComponent {
       experience: 9,
       email: 'deepak.verma@meritorious.edu',
       phone: '+91 98765 43215',
-      imageUrl: 'https://via.placeholder.com/100x100/2a5298/ffffff?text=DV'
+      imageUrl: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&h=400&fit=crop&crop=faces'
     }
   ];
 }

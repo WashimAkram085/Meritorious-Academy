@@ -48,12 +48,15 @@
     <section class="principal-message">
         <h2>From Principal's Desk</h2>
         <div class="principal-content">
-            <div class="principal-photo">
-                <img src="https://via.placeholder.com/200x200/1e3c72/ffffff?text=Principal" alt="Principal Photo">
-            </div>
-            <div class="principal-text">
+            <div class="principal-left">
+                <div class="principal-photo">
+                    <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?w=400&h=400&fit=crop&crop=faces"
+                        alt="Principal Photo">
+                </div>
                 <h3>Raihanul Islam</h3>
                 <p class="designation">Principal, Meritorious Academy</p>
+            </div>
+            <div class="principal-right">
                 <blockquote>
                     "Welcome to Meritorious Academy, where we believe in nurturing not just academic excellence but also
                     character and values. Our dedicated faculty and state-of-the-art facilities create an environment
@@ -67,37 +70,60 @@
 
     <section class="school-gallery">
         <h2>Our School Campus</h2>
-        <div class="gallery-container">
-            <div class="gallery-tabs">
-                <button class="tab-btn" [class.active]="activeGalleryTab === 'campus'"
-                    (click)="setActiveGalleryTab('campus')">Campus</button>
-                <button class="tab-btn" [class.active]="activeGalleryTab === 'classrooms'"
-                    (click)="setActiveGalleryTab('classrooms')">Classrooms</button>
-                <button class="tab-btn" [class.active]="activeGalleryTab === 'labs'"
-                    (click)="setActiveGalleryTab('labs')">Labs</button>
-                <button class="tab-btn" [class.active]="activeGalleryTab === 'sports'"
-                    (click)="setActiveGalleryTab('sports')">Sports</button>
-            </div>
-            <div class="gallery-content">
-                <div *ngIf="activeGalleryTab === 'campus'" class="gallery-grid">
+        <div class="gallery-wrapper">
+            <!-- Campus Section -->
+            <div class="gallery-category">
+                <div class="category-header">
+                    <div class="category-icon">🏫</div>
+                    <h3>Campus</h3>
+                    <div class="category-divider"></div>
+                </div>
+                <div class="gallery-grid">
                     <div class="gallery-item" *ngFor="let image of campusImages">
                         <img [src]="image.url" [alt]="image.caption">
                         <div class="image-caption">{{ image.caption }}</div>
                     </div>
                 </div>
-                <div *ngIf="activeGalleryTab === 'classrooms'" class="gallery-grid">
+            </div>
+
+            <!-- Classrooms Section -->
+            <div class="gallery-category">
+                <div class="category-header">
+                    <div class="category-icon">📚</div>
+                    <h3>Classrooms</h3>
+                    <div class="category-divider"></div>
+                </div>
+                <div class="gallery-grid">
                     <div class="gallery-item" *ngFor="let image of classroomImages">
                         <img [src]="image.url" [alt]="image.caption">
                         <div class="image-caption">{{ image.caption }}</div>
                     </div>
                 </div>
-                <div *ngIf="activeGalleryTab === 'labs'" class="gallery-grid">
+            </div>
+
+            <!-- Labs Section -->
+            <div class="gallery-category">
+                <div class="category-header">
+                    <div class="category-icon">🔬</div>
+                    <h3>Laboratories</h3>
+                    <div class="category-divider"></div>
+                </div>
+                <div class="gallery-grid">
                     <div class="gallery-item" *ngFor="let image of labImages">
                         <img [src]="image.url" [alt]="image.caption">
                         <div class="image-caption">{{ image.caption }}</div>
                     </div>
                 </div>
-                <div *ngIf="activeGalleryTab === 'sports'" class="gallery-grid">
+            </div>
+
+            <!-- Sports Section -->
+            <div class="gallery-category">
+                <div class="category-header">
+                    <div class="category-icon">⚽</div>
+                    <h3>Sports Facilities</h3>
+                    <div class="category-divider"></div>
+                </div>
+                <div class="gallery-grid">
                     <div class="gallery-item" *ngFor="let image of sportsImages">
                         <img [src]="image.url" [alt]="image.caption">
                         <div class="image-caption">{{ image.caption }}</div>

@@ -41,6 +41,43 @@ h1 {
     text-align: center;
 }
 
+.teacher-section {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem;
+    background: linear-gradient(135deg, #667eea15, #764ba215);
+    border-radius: 10px;
+    margin-bottom: 1rem;
+}
+
+.teacher-photo {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid #667eea;
+    box-shadow: 0 4px 10px rgba(102, 126, 234, 0.3);
+}
+
+.teacher-info {
+    flex: 1;
+}
+
+.teacher-label {
+    font-size: 0.85rem;
+    color: #666;
+    margin: 0 0 0.3rem 0;
+    font-weight: 500;
+}
+
+.teacher-name {
+    font-size: 1.1rem;
+    color: #1e3c72;
+    margin: 0;
+    font-weight: 600;
+}
+
 .class-details {
     margin-bottom: 1.5rem;
 }
