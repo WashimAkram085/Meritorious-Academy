@@ -531,6 +531,11 @@ blockquote {
 
 // Responsive design
 @media (max-width: 768px) {
+    .hero {
+        padding: 2rem 1rem;
+        margin: 0 0 1.5rem 0;
+    }
+
     .hero-content {
         h1 {
             font-size: 2rem;
@@ -543,6 +548,23 @@ blockquote {
 
     .hero-stats {
         grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+        margin-top: 2rem;
+    }
+
+    .stat {
+        padding: 1.5rem 1rem;
+        min-width: 0;
+
+        h3 {
+            font-size: 2rem;
+            word-break: break-word;
+        }
+
+        p {
+            font-size: 0.9rem;
+            word-break: break-word;
+        }
     }
 
     .about,
@@ -583,5 +605,70 @@ blockquote {
         flex: 1;
         min-width: calc(50% - 1px);
         padding: 0.8rem 1rem;
+    }
+}
+
+// Extra small mobile screens
+@media (max-width: 480px) {
+    .hero {
+        padding: 1.5rem 0.75rem;
+    }
+
+    .hero-content {
+        h1 {
+            font-size: 1.5rem;
+        }
+
+        p {
+            font-size: 0.95rem;
+        }
+    }
+
+    .hero-stats {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 0.75rem;
+        margin-top: 1.5rem;
+    }
+
+    .stat {
+        padding: 1rem 0.75rem;
+        border-radius: 12px;
+
+        h3 {
+            font-size: 1.6rem;
+            margin: 0 0 0.3rem 0;
+        }
+
+        p {
+            font-size: 0.75rem;
+        }
+    }
+
+    .about,
+    .facilities {
+        margin: 2rem 0;
+
+        h2 {
+            font-size: 1.8rem;
+            margin-bottom: 2rem;
+        }
+    }
+
+    .about-card,
+    .facility {
+        padding: 1.5rem;
+    }
+
+    .principal-content {
+        padding: 1.5rem;
+    }
+
+    .gallery-content {
+        padding: 1rem;
+    }
+
+    .tab-btn {
+        padding: 0.7rem 0.5rem;
+        font-size: 0.85rem;
     }
 }
