@@ -1,0 +1,36 @@
+<div class="notices-container">
+  <h1>School Notices & Announcements</h1>
+  <p class="subtitle">Important updates and information for students and parents</p>
+  
+  <div class="notices-grid">
+    <div *ngFor="let notice of notices" class="notice-card" [class.urgent]="notice.isUrgent">
+      <div class="notice-header">
+        <h3>{{ notice.title }}</h3>
+        <div class="notice-meta">
+          <span class="date">{{ notice.date }}</span>
+          <span class="category" [class]="notice.category">{{ notice.category }}</span>
+        </div>
+      </div>
+      <div class="notice-content">
+        <p>{{ notice.content }}</p>
+        <div *ngIf="notice.attachment" class="attachment">
+          <a href="#" class="attachment-link">📎 {{ notice.attachment }}</a>
+        </div>
+      </div>
+      <div class="notice-footer">
+        <span class="author">By: {{ notice.author }}</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="archive-section">
+    <h3>Notice Archive</h3>
+    <div class="archive-filters">
+      <button class="filter-btn active">All</button>
+      <button class="filter-btn">Academic</button>
+      <button class="filter-btn">Events</button>
+      <button class="filter-btn">Administrative</button>
+      <button class="filter-btn">Holidays</button>
+    </div>
+  </div>
+</div>

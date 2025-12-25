@@ -5,155 +5,8 @@ import { CommonModule } from '@angular/common';
   selector: 'app-classroom',
   standalone: true,
   imports: [CommonModule],
-  template: `
-    <div class="classroom-container">
-      <h1>Classroom Information</h1>
-      <p class="subtitle">Classes 1-12 with Fee Structure</p>
-      
-      <div class="classes-grid">
-        <div *ngFor="let classInfo of classes" class="class-card">
-          <h3>Class {{ classInfo.number }}</h3>
-          <div class="class-details">
-            <p><strong>Subjects:</strong> {{ classInfo.subjects }}</p>
-            <p><strong>Students:</strong> {{ classInfo.studentCount }}</p>
-            <p><strong>Class Teacher:</strong> {{ classInfo.teacher }}</p>
-          </div>
-          
-          <div class="fee-structure">
-            <h4>Fee Structure</h4>
-            <div class="fee-item">
-              <span>Admission Fee:</span>
-              <span>₹{{ classInfo.fees.admission }} (One Time Payment)</span>
-            </div>
-            <div class="fee-item">
-              <span>Activity Fee:</span>
-              <span>₹{{ classInfo.fees.activity }} (One Time Payment)</span>
-            </div>
-            <div class="fee-item">
-              <span>Tuition Fee:</span>
-              <span>₹{{ classInfo.fees.tuition }}/month</span>
-            </div>
-            <div class="fee-total">
-              <span>Total Monthly:</span>
-              <span>₹{{ classInfo.fees.total }}/month</span>
-            </div>
-            
-            <div class="fee-image-placeholder" *ngIf="classInfo.feeImageUrl">
-              <img [src]="classInfo.feeImageUrl" alt="Fee Structure for Class {{ classInfo.number }}" />
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  `,
-  styles: [`
-    .classroom-container {
-      padding: 1rem;
-    }
-
-    h1 {
-      color: #1e3c72;
-      text-align: center;
-      margin-bottom: 0.5rem;
-    }
-
-    .subtitle {
-      text-align: center;
-      color: #666;
-      margin-bottom: 2rem;
-    }
-
-    .classes-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
-      gap: 2rem;
-    }
-
-    .class-card {
-      background: white;
-      border-radius: 10px;
-      padding: 1.5rem;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-      border: 2px solid #e9ecef;
-      transition: transform 0.3s ease;
-    }
-
-    .class-card:hover {
-      transform: translateY(-5px);
-      border-color: #2a5298;
-    }
-
-    .class-card h3 {
-      color: #1e3c72;
-      margin-bottom: 1rem;
-      font-size: 1.5rem;
-      text-align: center;
-    }
-
-    .class-details {
-      margin-bottom: 1.5rem;
-    }
-
-    .class-details p {
-      margin: 0.5rem 0;
-      color: #333;
-    }
-
-    .fee-structure {
-      border-top: 2px solid #f0f0f0;
-      padding-top: 1rem;
-    }
-
-    .fee-structure h4 {
-      color: #1e3c72;
-      margin-bottom: 1rem;
-      text-align: center;
-    }
-
-    .fee-item, .fee-total {
-      display: flex;
-      justify-content: space-between;
-      margin: 0.5rem 0;
-      padding: 0.3rem 0;
-    }
-
-    .fee-total {
-      font-weight: bold;
-      border-top: 1px solid #ddd;
-      margin-top: 0.5rem;
-      padding-top: 0.5rem;
-      color: #1e3c72;
-    }
-
-    .fee-image-placeholder {
-      margin-top: 1rem;
-      padding: 1rem;
-      background: #f8f9fa;
-      border-radius: 5px;
-      text-align: center;
-      min-height: 100px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-
-    .fee-image-placeholder img {
-      max-width: 100%;
-      max-height: 200px;
-      border-radius: 5px;
-    }
-
-    .fee-image-placeholder p {
-      color: #666;
-      font-style: italic;
-    }
-
-    @media (max-width: 768px) {
-      .classes-grid {
-        grid-template-columns: 1fr;
-      }
-    }
-  `]
+  templateUrl: './classroom.component.html',
+  styleUrls: ['./classroom.component.scss']
 })
 export class ClassroomComponent {
   classes = [
@@ -162,6 +15,7 @@ export class ClassroomComponent {
       subjects: 'English, Math, Science, Social Studies, Hindi',
       studentCount: 35,
       teacher: 'Mrs. Sharma',
+      teacherPhotoUrl: 'https://images.unsplash.com/photo-1580489944761-15a19d654956?w=400&h=400&fit=crop&crop=faces',
       fees: { tuition: 2000, admission: 0, activity: 0, total: 2000 },
       feeImageUrl: ''
     },
@@ -170,6 +24,7 @@ export class ClassroomComponent {
       subjects: 'English, Math, Science, Social Studies, Hindi',
       studentCount: 38,
       teacher: 'Mrs. Gupta',
+      teacherPhotoUrl: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=400&h=400&fit=crop&crop=faces',
       fees: { tuition: 2200, admission: 800, activity: 300, total: 3300 },
       feeImageUrl: ''
     },
@@ -178,6 +33,7 @@ export class ClassroomComponent {
       subjects: 'English, Math, Science, Social Studies, Hindi',
       studentCount: 42,
       teacher: 'Mr. Singh',
+      teacherPhotoUrl: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop&crop=faces',
       fees: { tuition: 2400, admission: 800, activity: 300, total: 3500 },
       feeImageUrl: ''
     },
@@ -186,6 +42,7 @@ export class ClassroomComponent {
       subjects: 'English, Math, Science, Social Studies, Hindi',
       studentCount: 40,
       teacher: 'Mrs. Patel',
+      teacherPhotoUrl: 'https://images.unsplash.com/photo-1594744803329-e58b31de8bf5?w=400&h=400&fit=crop&crop=faces',
       fees: { tuition: 2600, admission: 800, activity: 400, total: 3800 },
       feeImageUrl: ''
     },
@@ -194,6 +51,7 @@ export class ClassroomComponent {
       subjects: 'English, Math, Science, Social Studies, Hindi',
       studentCount: 45,
       teacher: 'Mr. Kumar',
+      teacherPhotoUrl: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=400&h=400&fit=crop&crop=faces',
       fees: { tuition: 2800, admission: 800, activity: 400, total: 4000 },
       feeImageUrl: ''
     },
@@ -202,6 +60,7 @@ export class ClassroomComponent {
       subjects: 'English, Math, Science, Social Studies, Hindi, Computer',
       studentCount: 43,
       teacher: 'Mrs. Verma',
+      teacherPhotoUrl: 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=400&h=400&fit=crop&crop=faces',
       fees: { tuition: 3000, admission: 800, activity: 400, total: 4200 },
       feeImageUrl: ''
     },
@@ -210,6 +69,7 @@ export class ClassroomComponent {
       subjects: 'English, Math, Science, Social Studies, Hindi, Computer',
       studentCount: 41,
       teacher: 'Mr. Joshi',
+      teacherPhotoUrl: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&h=400&fit=crop&crop=faces',
       fees: { tuition: 3200, admission: 800, activity: 500, total: 4500 },
       feeImageUrl: ''
     },
@@ -218,6 +78,7 @@ export class ClassroomComponent {
       subjects: 'English, Math, Science, Social Studies, Hindi, Computer',
       studentCount: 39,
       teacher: 'Mrs. Mehta',
+      teacherPhotoUrl: 'https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=400&h=400&fit=crop&crop=faces',
       fees: { tuition: 3400, admission: 800, activity: 500, total: 4700 },
       feeImageUrl: ''
     },
@@ -226,6 +87,7 @@ export class ClassroomComponent {
       subjects: 'English, Math, Science, Social Studies, Hindi, Computer',
       studentCount: 37,
       teacher: 'Mr. Agarwal',
+      teacherPhotoUrl: 'https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=400&h=400&fit=crop&crop=faces',
       fees: { tuition: 3600, admission: 800, activity: 500, total: 4900 },
       feeImageUrl: ''
     },
@@ -234,6 +96,7 @@ export class ClassroomComponent {
       subjects: 'English, Math, Physics, Chemistry, Biology, Computer',
       studentCount: 35,
       teacher: 'Mrs. Saxena',
+      teacherPhotoUrl: 'https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?w=400&h=400&fit=crop&crop=faces',
       fees: { tuition: 4000, admission: 800, activity: 600, total: 5400 },
       feeImageUrl: ''
     },
@@ -242,6 +105,7 @@ export class ClassroomComponent {
       subjects: 'Stream-based: Science/Commerce/Arts',
       studentCount: 32,
       teacher: 'Mr. Mishra',
+      teacherPhotoUrl: 'https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=400&h=400&fit=crop&crop=faces',
       fees: { tuition: 4500, admission: 800, activity: 600, total: 5900 },
       feeImageUrl: ''
     },
@@ -250,6 +114,7 @@ export class ClassroomComponent {
       subjects: 'Stream-based: Science/Commerce/Arts',
       studentCount: 30,
       teacher: 'Mrs. Tiwari',
+      teacherPhotoUrl: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=400&h=400&fit=crop&crop=faces',
       fees: { tuition: 5000, admission: 800, activity: 600, total: 6400 },
       feeImageUrl: ''
     }

@@ -1,0 +1,179 @@
+.notices-container {
+    padding: 1rem;
+}
+
+h1 {
+    color: #1e3c72;
+    text-align: center;
+    margin-bottom: 0.5rem;
+}
+
+.subtitle {
+    text-align: center;
+    color: #666;
+    margin-bottom: 2rem;
+}
+
+.notices-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 3rem;
+}
+
+.notice-card {
+    background: white;
+    border-radius: 10px;
+    padding: 1.5rem;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    border: 2px solid #e9ecef;
+    transition: transform 0.3s ease;
+}
+
+.notice-card:hover {
+    transform: translateY(-3px);
+}
+
+.notice-card.urgent {
+    border-color: #dc3545;
+    background: linear-gradient(135deg, #fff 0%, #ffe6e6 100%);
+}
+
+.notice-header {
+    margin-bottom: 1rem;
+}
+
+.notice-header h3 {
+    color: #1e3c72;
+    margin: 0 0 0.5rem 0;
+    font-size: 1.2rem;
+}
+
+.notice-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.date {
+    color: #666;
+    font-size: 0.9rem;
+}
+
+.category {
+    padding: 0.2rem 0.8rem;
+    border-radius: 15px;
+    font-size: 0.8rem;
+    font-weight: 500;
+    text-transform: uppercase;
+}
+
+.category.academic {
+    background: #e3f2fd;
+    color: #1976d2;
+}
+
+.category.events {
+    background: #f3e5f5;
+    color: #7b1fa2;
+}
+
+.category.administrative {
+    background: #e8f5e8;
+    color: #388e3c;
+}
+
+.category.holidays {
+    background: #fff3e0;
+    color: #f57c00;
+}
+
+.category.urgent {
+    background: #ffebee;
+    color: #d32f2f;
+}
+
+.notice-content {
+    margin-bottom: 1rem;
+}
+
+.notice-content p {
+    color: #333;
+    line-height: 1.6;
+    margin: 0;
+}
+
+.attachment {
+    margin-top: 0.5rem;
+}
+
+.attachment-link {
+    color: #2a5298;
+    text-decoration: none;
+    font-size: 0.9rem;
+}
+
+.attachment-link:hover {
+    text-decoration: underline;
+}
+
+.notice-footer {
+    border-top: 1px solid #f0f0f0;
+    padding-top: 0.5rem;
+}
+
+.author {
+    color: #666;
+    font-size: 0.9rem;
+    font-style: italic;
+}
+
+.archive-section {
+    background: white;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.archive-section h3 {
+    color: #1e3c72;
+    margin-bottom: 1rem;
+}
+
+.archive-filters {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.filter-btn {
+    padding: 0.5rem 1rem;
+    border: 2px solid #e9ecef;
+    background: white;
+    color: #333;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.filter-btn:hover,
+.filter-btn.active {
+    background: #2a5298;
+    color: white;
+    border-color: #2a5298;
+}
+
+@media (max-width: 768px) {
+    .notices-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .archive-filters {
+        flex-direction: column;
+        align-items: center;
+    }
+}

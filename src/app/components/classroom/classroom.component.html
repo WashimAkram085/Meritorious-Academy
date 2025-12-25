@@ -1,0 +1,39 @@
+<div class="classroom-container">
+    <h1>Courses Information</h1>
+    <p class="subtitle">Classes 1-12 with Fee Structure</p>
+
+    <div class="classes-grid">
+        <div *ngFor="let classInfo of classes" class="class-card">
+            <h3>Class {{ classInfo.number }}</h3>
+            <div class="class-details">
+                <p><strong>Subjects:</strong> {{ classInfo.subjects }}</p>
+                <p><strong>Students:</strong> {{ classInfo.studentCount }}</p>
+                <p><strong>Class Teacher:</strong> {{ classInfo.teacher }}</p>
+            </div>
+
+            <div class="fee-structure">
+                <h4>Fee Structure</h4>
+                <div class="fee-item">
+                    <span>Admission Fee:</span>
+                    <span>₹{{ classInfo.fees.admission }} (One Time Payment)</span>
+                </div>
+                <div class="fee-item">
+                    <span>Activity Fee:</span>
+                    <span>₹{{ classInfo.fees.activity }} (One Time Payment)</span>
+                </div>
+                <div class="fee-item">
+                    <span>Tuition Fee:</span>
+                    <span>₹{{ classInfo.fees.tuition }}/month</span>
+                </div>
+                <div class="fee-total">
+                    <span>Total Monthly:</span>
+                    <span>₹{{ classInfo.fees.total }}/month</span>
+                </div>
+
+                <div class="fee-image-placeholder" *ngIf="classInfo.feeImageUrl">
+                    <img [src]="classInfo.feeImageUrl" alt="Fee Structure for Class {{ classInfo.number }}" />
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

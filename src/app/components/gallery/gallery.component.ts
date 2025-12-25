@@ -3,15 +3,13 @@ import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 @Component({
-  selector: 'app-home',
+  selector: 'app-gallery',
   standalone: true,
   imports: [CommonModule],
-  templateUrl: './home.component.html',
-  styleUrls: ['./home.component.scss']
+  templateUrl: './gallery.component.html',
+  styleUrls: ['./gallery.component.scss']
 })
-export class HomeComponent {
-  activeGalleryTab = 'campus';
-
+export class GalleryComponent {
   campusImages = [
     {
       url: 'https://images.unsplash.com/photo-1562774053-701939374585?w=800&h=600&fit=crop',
@@ -34,7 +32,7 @@ export class HomeComponent {
       caption: 'Campus Courtyard'
     },
     {
-      url: 'https://images.unsplash.com/photo-1523050854058-8df90110c9f1?w=800&h=600&fit=crop',
+      url: 'https://images.unsplash.com/photo-1568667256549-094345857637?w=800&h=600&fit=crop',
       caption: 'School Library Exterior'
     }
   ];
@@ -119,8 +117,4 @@ export class HomeComponent {
       caption: 'Outdoor Track & Field'
     }
   ];
-
-  setActiveGalleryTab(tab: string) {
-    this.activeGalleryTab = tab;
-  }
 }
