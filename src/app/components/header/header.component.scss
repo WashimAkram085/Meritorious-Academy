@@ -11,6 +11,7 @@ $transition-smooth: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
     position: relative;
     overflow: hidden;
+    overflow-x: hidden;
 
     &::before {
         content: '';
@@ -31,16 +32,22 @@ $transition-smooth: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     margin: 0 auto;
     padding: 0 2rem;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    justify-content: space-between;
     align-items: center;
     gap: 1rem;
     position: relative;
     z-index: 2;
+    width: 100%;
+    box-sizing: border-box;
 }
 
 // Logo section
 .logo {
     animation: fadeInLeft 0.8s ease-out;
+    text-align: left;
+    flex-shrink: 1;
+    min-width: 0;
 
     h1 {
         margin: 0;
@@ -190,15 +197,87 @@ $transition-smooth: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     }
 }
 
+// Hamburger button (hidden on desktop, visible on mobile)
+.hamburger {
+    display: none; // Hidden by default on desktop
+    flex-direction: column;
+    justify-content: space-around;
+    width: 2rem;
+    height: 2rem;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    z-index: 1000;
+    position: relative;
+    flex-shrink: 0;
+
+    &:focus {
+        outline: none;
+    }
+
+    .bar {
+        width: 2rem;
+        height: 0.25rem;
+        background: $text-color;
+        border-radius: 10px;
+        transition: all 0.3s ease;
+        position: relative;
+    }
+
+    // Animated hamburger to X transformation
+    &.active {
+        .bar:nth-child(1) {
+            transform: rotate(45deg) translate(0.5rem, 0.5rem);
+        }
+
+        .bar:nth-child(2) {
+            opacity: 0;
+            transform: translateX(20px);
+        }
+
+        .bar:nth-child(3) {
+            transform: rotate(-45deg) translate(0.5rem, -0.5rem);
+        }
+    }
+}
+
+// Backdrop overlay for mobile menu
+.menu-backdrop {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+    z-index: 998; // Below menu but above content
+
+    &.active {
+        opacity: 1;
+        visibility: visible;
+    }
+
+    @media (max-width: 768px) {
+        display: block;
+    }
+}
+
 // Responsive design
 @media (max-width: 768px) {
     .header-content {
-        flex-direction: column;
-        gap: 0.5rem;
         padding: 0 1rem;
+        gap: 0.5rem;
     }
 
     .logo {
+        flex: 0 1 auto;
+        order: 1;
+        max-width: calc(100% - 3rem);
+
         h1 {
             font-size: 1.4rem;
         }
@@ -208,39 +287,138 @@ $transition-smooth: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
         }
     }
 
+    // Show hamburger on mobile
+    .hamburger {
+        display: flex;
+        order: 2;
+        margin-left: auto;
+    }
+
+    // Mobile navigation styles
     .nav {
-        gap: 0.6rem;
-        overflow-x: auto;
-        flex-wrap: nowrap;
-        padding-bottom: 2px;
+        position: fixed;
+        top: 0;
+        right: -100%; // Hidden off-screen by default
+        height: 100vh;
+        width: 280px;
+        max-width: 80%;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 5rem 2rem 2rem;
+        gap: 0;
+        transition: right 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+        box-shadow: -5px 0 25px rgba(0, 0, 0, 0.3);
+        z-index: 999;
+        overflow-y: auto;
+        order: 3;
+
+        // Show menu when open
+        &.mobile-open {
+            right: 0;
+        }
 
         a {
-            padding: 0.4rem 0.6rem;
-            font-size: 0.75rem;
-            white-space: nowrap;
-            border-radius: 15px;
+            width: 80%;
+            padding: 1rem 1.5rem;
+            font-size: 1rem;
+            border-radius: 10px;
+            margin-bottom: 0.5rem;
+            text-align: left;
+            border-left: 3px solid transparent;
+            transition: all 0.3s ease;
+
+            &:hover {
+                background: rgba(255, 255, 255, 0.2);
+                border-left-color: white;
+                transform: translateX(5px);
+            }
+
+            &.active {
+                background: rgba(255, 255, 255, 0.25);
+                border-left-color: white;
+                transform: translateX(5px);
+            }
         }
     }
 
     .admin-btn {
-        padding: 0.3rem 0.6rem !important;
-        font-size: 0.6rem !important;
-        border-radius: 15px !important;
+        margin-top: 1rem;
+        padding: 0.8rem 1.2rem !important;
+        font-size: 0.85rem !important;
+        border-radius: 20px !important;
+        text-align: center !important;
+        border: 2px solid rgba(255, 255, 255, 0.5) !important;
+
+        &:hover {
+            background: rgba(255, 255, 255, 0.3) !important;
+            transform: translateX(5px) !important;
+        }
     }
 }
 
 @media (max-width: 480px) {
+    .header-content {
+        padding: 0 0.75rem;
+        gap: 0.5rem;
+    }
+
+    .logo {
+        max-width: calc(100% - 2.5rem);
+
+        h1 {
+            font-size: 1rem;
+            line-height: 1.2;
+        }
+
+        p {
+            font-size: 0.55rem;
+        }
+    }
+
+    .hamburger {
+        width: 1.75rem;
+        height: 1.75rem;
+
+        .bar {
+            width: 1.75rem;
+            height: 0.2rem;
+        }
+    }
+
     .nav {
-        gap: 0.4rem;
+        width: 260px;
 
         a {
-            padding: 0.3rem 0.5rem;
-            font-size: 0.7rem;
+            font-size: 0.95rem;
+            padding: 0.9rem 1.2rem;
         }
     }
 
     .admin-btn {
-        padding: 0.25rem 0.5rem !important;
-        font-size: 0.55rem !important;
+        font-size: 0.8rem !important;
+    }
+}
+
+// Tablet view (between mobile and desktop)
+@media (min-width: 769px) and (max-width: 1024px) {
+    .header-content {
+        flex-direction: row;
+        justify-content: space-between;
+        padding: 0 1.5rem;
+    }
+
+    .nav {
+        gap: 0.8rem;
+
+        a {
+            padding: 0.5rem 0.8rem;
+            font-size: 0.85rem;
+        }
+    }
+
+    .admin-btn {
+        padding: 0.4rem 0.7rem !important;
+        font-size: 0.65rem !important;
     }
 }
