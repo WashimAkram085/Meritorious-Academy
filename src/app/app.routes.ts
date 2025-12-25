@@ -1,6 +1,8 @@
 
+
 import { Routes } from '@angular/router';
 import { HomeComponent } from './components/home/home.component';
+import { GalleryComponent } from './components/gallery/gallery.component';
 import { ClassroomComponent } from './components/classroom/classroom.component';
 import { TeachersComponent } from './components/teachers/teachers.component';
 import { ResultsComponent } from './components/results/results.component';
@@ -12,6 +14,7 @@ import { AdminDashboardComponent } from './components/admin-dashboard/admin-dash
 export const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
   { path: 'home', component: HomeComponent },
+  { path: 'gallery', component: GalleryComponent },
   { path: 'classroom', component: ClassroomComponent },
   { path: 'teachers', component: TeachersComponent },
   { path: 'results', component: ResultsComponent },
